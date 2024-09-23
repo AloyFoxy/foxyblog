@@ -1,0 +1,27 @@
+---
+import type { APIFoxesResponse } from '../types/api';
+import Card from './Card.astro';
+
+const fetchFoxes = async (count) => {
+    const promises = Array.from({ length: count }, () => fetch('https://randomfox.ca/floof/'));
+    const responses = await Promise.all(promises);
+    const data = await Promise.all(responses.map(res => res.json()));
+    return data;
+};
+
+const data: APIFoxesResponse[] = await fetchFoxes(25); // Cambia el número 5 por la cantidad de imágenes que deseas
+---
+
+<div class="grid grid-cols-4 mx-auto">
+        {
+            data.map(({ image }) => (
+                <div class="grid gap-4">
+                    <Card
+                        img={image}
+                        id=""
+                        name="Fox"
+                    />
+                </div>
+            ))
+        }
+</div>
