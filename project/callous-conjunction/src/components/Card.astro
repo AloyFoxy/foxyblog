@@ -1,16 +1,15 @@
 ---
 interface Props {
     id: string;
-    name: string;
     img: string;
-    success: boolean;
-    flightNumber: number;
-    details: string;
+    link: string;
 }
-const { img }: Props = Astro.props;
+const { img, link }: Props = Astro.props;
 ---
 </header>
-<picture>
-    <img class="h-auto max-w-full rounded-lg " src={img} />
-</picture>
-
+<div class="flex flex-col gap-4 bg-gray-800 p-4 rounded-md border-2 border-gray-600 hover:bg-gray-900 items-center">
+    <picture>
+        <img class="h-72 w-72 rounded-md object-cover hover:scale-110 transition-all duration-200" src={img} />        
+    </picture>    
+    <a class="text-gray-400 font-semibold border p-2 border-gray-600 rounded-md hover:bg-gray-950" href={link}>Link to the image</a>
+</div>

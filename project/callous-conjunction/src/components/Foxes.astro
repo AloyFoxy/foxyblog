@@ -9,17 +9,18 @@ const fetchFoxes = async (count) => {
     return data;
 };
 
-const data: APIFoxesResponse[] = await fetchFoxes(25); // Cambia el número 5 por la cantidad de imágenes que deseas
+const data: APIFoxesResponse[] = await fetchFoxes(10); // Cambia el número 5 por la cantidad de imágenes que deseas
+const generateId = () => Math.random().toString(36).substring(2, 15);
 ---
 
-<div class="grid grid-cols-4 mx-auto">
+<div class="grid grid-cols-4 gap-2 mx-auto place-content-center">
         {
-            data.map(({ image }) => (
-                <div class="grid gap-4">
-                    <Card
+            data.map(({ image, link }) => (
+                <div class="">
+                    <Card         
+                        id={generateId()}
                         img={image}
-                        id=""
-                        name="Fox"
+                        link={link}
                     />
                 </div>
             ))
