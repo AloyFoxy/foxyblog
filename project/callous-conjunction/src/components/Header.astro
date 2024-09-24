@@ -3,50 +3,25 @@ import HeaderButton from './HeaderButton.astro';
 console.log('javascript');
 ---
 
-<header class="py-8 px-4 mx-auto flex flex-col justify-center items-center gap-4">
-    <h1 class="text-white text-5xl">Welcome to website of<span class="text-orange-500 font-bold">Aloy</span></h1>
-    <p class="text-white text-xl">Este será mi header.</p>
-
-    <nav class="flex flex-row gap-3 items-center justify-center text-center">
-    <HeaderButton href="/">
-        Home
-    </HeaderButton>
-    <HeaderButton href="/projects">
-        <svg 
-            slot ="before"
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-        >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9z" />
-            <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
-        </svg>
-        Projects
-    </HeaderButton>
-    <HeaderButton href="/about-me">
-        <svg 
-            slot ="before"
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-        >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-            <path d="M12 9h.01" />
-            <path d="M11 12h1v4h1" />
-        </svg>
-        About Me
-    </HeaderButton>
-    </nav>
+<header class="py-6 px-8 mx-auto flex justify-between items-center gap-4">
+    <div>
+        <span class="text-white text-5xl font-bold">Aloy</span>
+    </div>
+    <div>
+        <nav class="flex gap-10 items-center justify-between text-center">
+            <HeaderButton href="/">
+                Start
+            </HeaderButton>
+            <HeaderButton href="/projects">
+                Who am i
+            </HeaderButton>
+            <HeaderButton href="/about-me">
+                My projects
+            </HeaderButton>
+            <HeaderButton href="/contact">
+                
+            </HeaderButton>            
+        </nav>
+    </div>
+    
 </header>
